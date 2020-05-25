@@ -1,0 +1,39 @@
+ def mycalculator(*val):
+	n=result=0
+	dummyval = list(val)
+	while n<len(dummyval) :
+		if dummyval[n]=='*':
+			result = dummyval[n-1]*dummyval[n+1]
+			dummyval[n-1]=result
+			dummyval.pop(n)
+			print(n)
+			dummyval.pop(n)
+			print(dummyval)
+			n=n-1
+		elif dummyval[n]=='/':
+			result = dummyval[n-1]/dummyval[n+1]
+			dummyval[n-1]=result
+			dummyval.pop(n)
+			print(n)
+			dummyval.pop(n)
+			print(dummyval)
+			n=n-1
+		n=n+1
+	l=len(dummyval)
+	while l is not 1 :
+		if dummyval[1]=='+':
+			result = dummyval[0]+dummyval[2]
+			dummyval[0]=result
+			dummyval.pop(1)
+			l=l-1
+			dummyval.pop(1)
+			l=l-1
+			print(dummyval)
+		elif dummyval[1]=='-':
+			result = dummyval[0]-dummyval[2]
+			dummyval[0]=result
+			dummyval.pop(1)
+			l=l-1
+			dummyval.pop(1)
+			l=l-1
+	print (dummyval[0])
